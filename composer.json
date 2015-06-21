@@ -1,0 +1,39 @@
+{
+    "name": "arrounded/extractors",
+    "description": "An abstraction layer to extract data from various sources",
+    "license": "MIT",
+    "keywords": [
+        "extraction",
+        "csv"
+    ],
+    "authors": [
+        {
+            "name": "madewithlove",
+            "email": "heroes@madewithlove.be"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "require-dev": {
+        "fabpot/php-cs-fixer": "2.0.*@dev",
+        "phpunit/phpunit": "^4.7",
+        "mockery/mockery": "^0.9.4",
+        "phpspec/phpspec": "^2.2",
+        "symfony/var-dumper": "^2.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Arrounded\\Extractors\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Arrounded\\Extractors\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "lint": "php-cs-fixer fix"
+    }
+}
