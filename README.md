@@ -16,7 +16,32 @@ $ composer require arrounded/extractors
 
 ## Usage
 
-How the module works
+The idea is that you extend the existing extractors, which provide the minimal functionality, and tweak it for your use case.
+
+For example (using the `CsvExtractor`)
+
+```php
+class MyExtractor extends CsvExtractor {
+
+   public function getData(array $data = [])
+   {
+        // $data contains the entire content of a row in the CSV
+
+        // You can return whatever you need from the row.
+        return $data;
+   }
+}
+
+// Using the extractor
+
+$extractor = new MyExtractor();
+$extractor->setFixture('path/to/data.csv');
+$extractor->run(function ($data) {
+    // $data contains whatever is the output of `MyExtractor::getData()`.
+
+    // Persist in database
+});
+```
 
 ## Testing
 
