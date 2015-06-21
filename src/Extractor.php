@@ -24,9 +24,7 @@ class Extractor implements ExtractorInterface
     public function run(callable $callback = null)
     {
         foreach ($this->fixture as $item) {
-            if ($callback && is_callable($callback)) {
-                $callback($this->data($item));
-            }
+            $this->useCallable($callback, $item);
         }
     }
 
@@ -50,5 +48,16 @@ class Extractor implements ExtractorInterface
         $this->fixture = $fixture;
 
         return $this;
+    }
+
+    /**
+     * @param callable $callback
+     * @param array    $item
+     */
+    protected function useCallable(callable $callback, $item = [])
+    {
+        if ($callback && is_callable($callback)) {
+            $callback($this->data($item));
+        }
     }
 }

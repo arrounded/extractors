@@ -12,13 +12,9 @@
 namespace Arrounded\Extractors;
 
 use Arrounded\Extractors\Subjects\CustomExtractor;
-use PHPUnit_Framework_TestCase;
 
-class ExtractorTest extends PHPUnit_Framework_TestCase
+class ExtractorTest extends AbstractExtractorTest
 {
-    /**
-     *
-     */
     public function test_can_extract_data()
     {
         $extractor = new Extractor();
