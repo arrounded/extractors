@@ -20,7 +20,7 @@ class CustomExtractor extends Extractor
      *
      * @return array
      */
-    protected function data(array $data = [])
+    protected function getData(array $data = [])
     {
         return [
             'foo' => $data['foo'].' '.$data['bar'],

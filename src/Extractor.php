@@ -33,7 +33,7 @@ class Extractor implements ExtractorInterface
      *
      * @return array
      */
-    protected function data(array $data = [])
+    protected function getData(array $data = [])
     {
         return $data;
     }
@@ -57,7 +57,7 @@ class Extractor implements ExtractorInterface
     protected function useCallable(callable $callback, $item = [])
     {
         if ($callback && is_callable($callback)) {
-            $callback($this->data($item));
+            $callback($this->getData($item));
         }
     }
 }
